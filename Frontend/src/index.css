@@ -1,0 +1,282 @@
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --defaultFont: 'Avenir', sans-serif;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir Regular'), url('./fonts/Avenir Regular.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: var(--defaultFont), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+}
+
+code {
+  font-family: var(--defaultFont), source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/**
+* Change blocks panel background color
+*/
+.blocklyFlyoutBackground {
+  fill: #f9f9f9 !important;
+  fill-opacity: 0.8 !important;
+}
+
+/**
+* Change blocks panel border color
+*/
+.blocklyFlyout {
+  border: 1px solid hsla(0, 0%, 0%, 0.15) !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/**
+* Add a outline to the block's label
+*/
+.blocklyText {
+  fill: #000 !important;
+  font-weight: 700 !important;
+  /* text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000; */
+  font-family: 'Avenir' !important;
+  font-size: 16px !important;
+}
+
+.blocklyScrollbarVertical.blocklyMainWorkspaceScrollbar,
+.blocklyScrollbarHorizontal.blocklyMainWorkspaceScrollbar {
+  display: none !important;
+}
+
+.blocklyFlyoutLabelText {
+  font-size: large !important;
+  font-weight: 700 !important;
+}
+
+.blocklyFlyoutBlockTag > text {
+  font-size: small !important;
+  font-weight: 200 !important;
+  transform: translateY(-14px);
+}
+
+/* Continuous toolbar does not seem to have a way
+ * to set font styles like blockly workspace, setting it manually.
+*/
+.blocklyTreeRowContentContainer .blocklyTreeLabel {
+  font-family: var(--defaultFont);
+}
+
+.blocklyToolboxDiv {
+  padding: 0;
+}
+
+.blocklyFlyout {
+  background: #f9f9f9 !important;
+}
+
+.selected-category-icon {
+  text-shadow: 2px 2px 8px rgb(255, 255, 255);
+}
+
+.selected-category-label {
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgb(255, 255, 255);
+}
+
+.custom-button {
+  text-transform: none;
+}
+
+.custom-run-button {
+  text-transform: none;
+  background-color: #2ecc71;
+  padding: 0px 0px;
+  min-height: 0;
+  /* width: 150px; */
+}
+
+.custom-run-button:hover {
+  background-color: #2ecc71;
+}
+
+.custom-assembly-button {
+  text-transform: none;
+  display: none !important;
+}
+
+.small-text {
+  font-size: 0.1rem !important;
+}
+
+/* Add these new styles */
+.output-panel-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.output-panel-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.output-panel-content.loading {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Add custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Add modern tooltip styles */
+.blockly-tooltip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  padding: 12px 16px !important;
+  font-family: 'Avenir', sans-serif !important;
+  max-width: 300px !important;
+  color: #334155 !important;
+}
+
+.blockly-tooltip-title {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 4px !important;
+  color: #1e293b !important;
+}
+
+.blockly-tooltip-description {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 8px !important;
+}
+
+.blockly-tooltip-runtime {
+  font-size: 12px !important;
+  color: #64748b !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin-top: 8px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.blockly-tooltip-modality {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #f1f5f9 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  color: #475569 !important;
+  margin-right: 4px !important;
+}
+
+.tooltip-container {
+  pointer-events: auto;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+.tooltip-content {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffffff;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.tooltip-section-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 16px 0 8px;
+}
+
+.tooltip-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.tooltip-examples {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.tooltip-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tooltip-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.tooltip-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.AutoChain, .AutoChain + .MuiDivider-root, .MuiDivider-root {
+  display: none !important;
+}
+
+.toolbar-controls {
+  display: none !important;
+}
+
+/* Hide design task form */
+form.flex.flex-row.w-full.h-auto.align-middle.justify-between {
+  display: none !important;
+}
+
+/* Hide Custom tab and block */
+.blocklyToolboxCategory:has([aria-label="Custom"]),
+.blocklyTreeRow:has([aria-label="Custom"]),
+.blocklyFlyoutLabelText:has(> text[text-anchor="start"]:contains("Custom")),
+.blocklyFlyoutButton:has(> .blocklyText:contains("Custom")) {
+  display: none !important;
+}
+
+.blocklyToolboxContents > div:last-child {
+  display: none !important;
+}

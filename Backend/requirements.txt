@@ -1,0 +1,12 @@
+fastapi
+python-multipart
+uvicorn
+replicate
+pydantic
+openai
+numpy
+Pillow
+pytesseract
+validators
+requests
+boto3

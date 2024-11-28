@@ -1,0 +1,3 @@
+.vercel
+.env
+Backend/config/settings_local.py
