@@ -1,4 +1,39 @@
-.vercel
+# Dependencies
+Frontend/node_modules
+Backend/__pycache__
+Backend/*.pyc
+Backend/*/*.pyc
+Backend/*/*/*.pyc
+*.pyc
+
+# Environment
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 Backend/config/settings_local.py
-Frontend/node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+Frontend/build/
+Frontend/dist/
+Backend/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Deployment
+.vercel
