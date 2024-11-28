@@ -1,3 +1,4 @@
 .vercel
 .env
 Backend/config/settings_local.py
+Frontend/node_modules/
